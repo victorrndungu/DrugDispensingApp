@@ -1,14 +1,32 @@
 <?php
 require("EasyDawa.php");
-$sql= "INSERT INTO `doctors_info` (`FIRST NAME`, `LAST NAME`, `DOCTORS ID`, `SPECIALITY`,
- `EMAIL ADDRESS`, `YRS OF EXPERIENCRE`, `PASSWORDS`)
- VALUES ('Ravi', 'Vishkumar', '20101020', 'Radiologist',
-  'vishkumarav1@betterhealth.com', '10', 'r@dior@v1p')";
+/ Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Get form data
+    $doctors_id = $_POST["DOCTORS_ID"];
+    $first_name = $_POST["FIRST_NAME"];
+    $last_name = $_POST["LAST_NAME"];
+    $speciality = $_POST["SPECIALITY"];
+    $yrs_of_experience = $_POST["YRS_OF_EXPERIENCE"];
+    $email = $_POST["EMAIL_ADDRESS"];
+    $password = $_POST["PASSWORDS"];
 
-  if ($conn->query($sql) ==TRUE) {
-    echo " New record created successfully";
-} else {
-    echo "Error: " .$sql . "<br>" . $conn->error;
+    // Prepare and execute the SQL query
+    $sql = "INSERT INTO doctors_info (DOCTORS_ID, FIRST_NAME, LAST_NAME, SPECIALITY, YRS_OF_EXPERIENCE, EMAIL_ADDRESS, PASSWORDS)
+            VALUES ('$doctors_id', '$first_name', '$last_name', '$speciality', '$yrs_of_experience', '$email', '$password')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New doctor added successfully!";
+    } else {
+        if ($conn->errno === 1062) {
+            echo "Error: Doctor with ID $doctors_id already exists.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    // Close the database connection
+    $conn->close();
 }
-$conn->close();
 ?>
+
