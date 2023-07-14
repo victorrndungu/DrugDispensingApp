@@ -1,7 +1,9 @@
+
+=======
 <?php
 require("EasyDawa.php");
 
-$sql = "SELECT PATIENT_ID, FIRST_NAME, LAST_NAME, GENDER, AGE, EMAIL_ADDRESS FROM patients_info";
+$sql = "SELECT PATIENT_ID, FIRST_NAME, LAST_NAME, GENDER, AGE, EMAIL_ADDRESS FROM patients_info"; 
 $result = $conn->query($sql);
 ?>
 
@@ -46,3 +48,4 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
+>>>>>>> 48aeca46151e3644c40187df7e33b7408ad8e948
