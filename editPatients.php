@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 require("EasyDawa.php");
 
@@ -66,7 +65,6 @@ if (isset($_GET["PATIENT_ID"])) {
     </form>
 </body>
 </html>
-=======
 <?php
 require("EasyDawa.php");
 
@@ -131,4 +129,3 @@ if (isset($_GET["PATIENT_ID"])) {
     </form>
 </body>
 </html>
->>>>>>> 48aeca46151e3644c40187df7e33b7408ad8e948
