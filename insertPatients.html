@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Patient</title>
+</head>
+<body>
+    <h1>Add New Patient</h1>
+    <form method="post" action="insertPatients.php">
+        <label for="PATIENT_ID">Patient ID:</label>
+        <input type="number"name="PATIENT_ID"required><br>
+
+        <label for="FIRST_NAME">First Name:</label>
+        <input type="text" name="FIRST_NAME" required><br>
+
+        <label for="LAST_NAME">Last Name:</label>
+        <input type="text" name="LAST_NAME" required><br>
+
+        <label for="GENDER">Gender:</label>
+        <input type="radio" name="GENDER" value="Male" required>Male
+        <input type="radio" name="GENDER" value="Female" required>Female<br>
+
+        <label for="AGE">Age:</label>
+        <input type="number" name="AGE" required><br>
+
+        <label for="EMAIL_ADDRESS">Email Address:</label>
+        <input type="email" name="EMAIL_ADDRESS" required><br>
+
+        <label for="PASSWORDS">Password:</label>
+        <input type="password" name="PASSWORDS" required><br>
+
+        <input type="submit" value="Add Patient">
+    </form>
+</body>
+</html>
