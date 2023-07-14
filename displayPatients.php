@@ -49,3 +49,7 @@ $result = $conn->query($sql);
 $conn->close();
 ?>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa03cb58f524fdcb2fc2893764bd70c61f036b29

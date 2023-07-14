@@ -46,3 +46,7 @@ $conn->close();
         <input type="submit" value="Update">
     <?php endif; ?>
 </form>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa03cb58f524fdcb2fc2893764bd70c61f036b29
