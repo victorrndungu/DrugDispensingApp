@@ -2,7 +2,7 @@
 require("EasyDawa.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Get the unique identifier (PATIENT_ID) from the form submission
+    // Get the unique identifier (PHAR_ID) from the form submission
     $PHAR_ID = $_POST["PHAR_ID"];
 
     // Prepare and execute the SQL DELETE statement
