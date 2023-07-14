@@ -41,6 +41,23 @@ $result = $conn->query($sql);
         <?php endwhile; ?>
 
     </table>
+    <!-- Display the HTML form with pre-filled patient details for editing -->
+<form method="post" action="">
+    <input type="hidden" name="PATIENT_ID" value="<?php echo $patientID; ?>">
+    <label for="FIRST_NAME">First Name:</label>
+    <input type="text" name="FIRST_NAME" value="<?php echo $FIRST_NAME; ?>"><br>
+    <label for="LAST_NAME">Last Name:</label>
+    <input type="text" name="LAST_NAME" value="<?php echo $LAST_NAME; ?>"><br>
+    <label for="GENDER">Gender:</label>
+    <input type="text" name="GENDER" value="<?php echo $GENDER; ?>"><br>
+    <label for="AGE">Age:</label>
+    <input type="text" name="AGE" value="<?php echo $AGE; ?>"><br>
+    <label for="EMAIL_ADDRESS">Email Address:</label>
+    <input type="text" name="EMAIL_ADDRESS" value="<?php echo $EMAIL_ADDRESS; ?>"><br>
+
+    <input type="submit" value="Update">
+</form>
+
 <?php else : ?>
     <p>No data found.</p>
 <?php endif; ?>
