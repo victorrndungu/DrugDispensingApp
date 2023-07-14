@@ -32,7 +32,7 @@ $result = $conn->query($sql);
                         <input type="hidden" name="DOCTORS_ID" value="<?php echo $row["DOCTORS_ID"]; ?>">
                         <input type="submit" value="Edit">
                     </form>
-                    <form method="post" action="deletePatients.php">
+                    <form method="post" action="deleteDoctors.php">
                         <input type="hidden" name="DOCTORS_ID" value="<?php echo $row["DOCTORS_ID"]; ?>">
                         <input type="submit" value="Delete">
                     </form>

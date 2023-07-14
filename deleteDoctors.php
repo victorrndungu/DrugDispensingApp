@@ -3,7 +3,7 @@ require("EasyDawa.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get the unique identifier (PATIENT_ID) from the form submission
-    $PATIENT_ID = $_POST["PATIENT_ID"];
+    $DOCTORS_ID = $_POST["DOCTORS_ID"];
 
     // Prepare and execute the SQL DELETE statement
     $sql = "DELETE FROM doctors_info WHERE DOCTORS_ID = ?";
