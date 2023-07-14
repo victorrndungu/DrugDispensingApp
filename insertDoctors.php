@@ -1,6 +1,6 @@
 <?php
 require("EasyDawa.php");
-/ Check if the form is submitted
+// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get form data
     $doctors_id = $_POST["DOCTORS_ID"];
