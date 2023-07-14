@@ -1,5 +1,5 @@
 
-=======
+
 <?php
 require("EasyDawa.php");
 
@@ -48,4 +48,4 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
->>>>>>> 48aeca46151e3644c40187df7e33b7408ad8e948
+

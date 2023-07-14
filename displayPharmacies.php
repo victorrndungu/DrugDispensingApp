@@ -1,5 +1,5 @@
 
-=======
+
 <?php
 require("EasyDawa.php");
 
@@ -22,8 +22,8 @@ $result = $conn->query($sql);
         <?php while ($row = $result->fetch_assoc()) : ?>
             <tr>
                 <td><?php echo $row["PHAR_ID"]; ?></td>
-                <td><?php echo $row["pharmname"]; ?></td>
-                <td><?php echo $row["pharmphone"]; ?></td>
+                <td><?php echo $row["pharname"]; ?></td>
+                <td><?php echo $row["pharphone"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
                 <td><?php echo $row["PharAddress"]; ?></td>
                 <td><?php echo $row["Contract_ID"]; ?></td>
@@ -48,4 +48,4 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
->>>>>>> 48aeca46151e3644c40187df7e33b7408ad8e948
+

@@ -1,20 +1,19 @@
 
-=======
 <?php
 require("EasyDawa.php");
 
-$sql = "SELECT DOCTORS_ID, FIRST_NAME, LAST_NAME, SPECIALITY, YRS_OF_EXPERIENCE, EMAIL_ADDRESS FROM patients_info"; 
+$sql = "SELECT DOCTORS_ID, FIRST_NAME, LAST_NAME, SPECIALITY, YRS_OF_EXPERIENCE, EMAIL_ADDRESS FROM doctors_info"; 
 $result = $conn->query($sql);
 ?>
 
 <?php if ($result->num_rows > 0) : ?>
     <table border="1">
         <tr>
-            <th>PATIENT_ID</th>
+            <th>DOCTORS_ID_ID</th>
             <th>FIRST_NAME</th>
             <th>LAST_NAME</th>
             <th>GENDER</th>
-            <th>AGE</th>
+            <th>YRS_OF_EXPERIENCE</th>
             <th>EMAIL_ADDRESS</th>
             <th>Actions</th>
         </tr>
@@ -25,7 +24,7 @@ $result = $conn->query($sql);
                 <td><?php echo $row["FIRST_NAME"]; ?></td>
                 <td><?php echo $row["LAST_NAME"]; ?></td>
                 <td><?php echo $row["SPECIALITY"]; ?></td>
-                <td><?php echo $row["YES_OF_EXPERIENCE"]; ?></td>
+                <td><?php echo $row["YRS_OF_EXPERIENCE"]; ?></td>
                 <td><?php echo $row["EMAIL_ADDRESS"]; ?></td>
                 <td>
                     <form method="post" action="editDoctors.php">
@@ -48,4 +47,3 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
->>>>>>> 48aeca46151e3644c40187df7e33b7408ad8e948
