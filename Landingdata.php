@@ -10,7 +10,7 @@
 <body>
     <div class="navigation">
         <nav>
-            <a href="Landing.html"><img src="/LandingAssets/White Logo.png" class="logo"></a>
+            <a href="Landingdata.php"><img src="/LandingAssets/White Logo.png" class="logo"></a>
             <ul>
                 <li><a href="">Contact</a></li>
                 <li><a href="">Sign Up</a></li>
@@ -24,15 +24,6 @@
         <p>We will only require a bit of your time!</p>
         <button type="button"><span></span>GET YOUR MEDICINE!</button>
     </div>
-
-    <form action="Landing.php" method="post">
-        First Name: <input type="text" name="F_Name"><br>
-        Last Name: <input type="text" name="L_Name"><br>
-        Date of Birth: <input type="date" name="L_Name"><br>
-        Identification Card Number: <input type="text" name="ID_No"><br>
-        Phone Number: <input type="text" name="Phone_No"><br>
-        <input type="submit">
-    </form>
 </body>
 
 </html>
