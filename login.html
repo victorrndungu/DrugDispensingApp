@@ -1,14 +1,30 @@
 <html>
+
+<head>
+    <title>General Login</title>
+    <link rel="stylesheet" href="login.css">
+
     <head>
-        <title>General Login</title>
-        <link rel="stylesheet" href="login.css">
+        <title>General Sign Up</title>
+        <link rel="stylesheet" href="signup.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <class
+
+<body>
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.php"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
         <h1>Welcome!</h1>
-        <h2>Please login to continue</h2>
-        <form action="login.php" method="post" autocomplete="on">
-            <label for="userType">Login as:</label>
+        <hr>
+        <form action="signup.php" method="post" autocomplete="on">
+            <label for="userType">Sign up as:</label>
+            <br>
             <select id="userType" name="userType">
                 <option value="patient">Patient</option>
                 <option value="doctor">Doctor</option>
@@ -17,32 +33,36 @@
                 <option value="supervisor">Supervisor</option>
                 <option value="administrator">Administrator</option>
             </select>
-            <br><br>
-            <input type="button" value="Login" onclick="login()">
-            <input type="button" value="Cancel">
+            <br>
+            <br>
+            <div class="buttons">
+                <input type="button" value="Sign Up" onclick="login()">
+                <br>
+                <input type="button" value="Cancel">
+            </div>
         </form>
+    </div>
 
-        <script>
-            function login() {
-                var userType = document.getElementById("userType").value;
-                if (userType == "patient") {
-                    window.location.href = "patientLogin.html";
-                } else if (userType == "doctor") {
-                    window.location.href = "doctorLogin.html";
-                } else if (userType == "pharmacy") {
-                    window.location.href = "pharmacyLogin.html";
-                } else if (userType == "company") {
-                    window.location.href = "companyLogin.html";
-                } else if (userType == "supervisor") {
-                    window.location.href = "supervisorLogin.html"
-                }    else if (userType == "administrator") {
-                    window.location.href = "adminLogin.html";
-                } else {
-                    alert("Please select a user type");
-                }
+    <script>
+        function login() {
+            var userType = document.getElementById("userType").value;
+            if (userType == "patient") {
+                window.location.href = "patientLogin.html";
+            } else if (userType == "doctor") {
+                window.location.href = "doctorLogin.html";
+            } else if (userType == "pharmacy") {
+                window.location.href = "pharmacyLogin.html";
+            } else if (userType == "company") {
+                window.location.href = "companyLogin.html";
+            } else if (userType == "supervisor") {
+                window.location.href = "supervisorLogin.html"
+            } else if (userType == "administrator") {
+                window.location.href = "adminLogin.html";
+            } else {
+                alert("Please select a user type");
             }
-        </script>
-    </body>
+        }
+    </script>
+</body>
+
 </html>
-
-

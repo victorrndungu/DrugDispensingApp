@@ -1,11 +1,42 @@
 <html>
-<form action="pharmacyLogin.php" method="post" autocomplete="on">
-    <label for="PHAR_ID">Pharmacy's ID no:</label>
-    <input type="text" id="PHAR_ID" name="PHAR_ID" required>
-    <br><br>
-    <label for="PASSWORDS">Password:</label>
-    <input type="PASSWORDS" id="PASSWORDS" name="PASSWORDS" required>
-    <br><br>
-    <input type="submit" value="Login">
-    <input type="submit" value="Cancel">    
+
+<head>
+    <title>Add New Company</title>
+    <link rel="stylesheet" href="companylogin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Log In</h1>
+        <hr>
+        <br><br>
+        <form action="pharmacyLogin.php" method="post" autocomplete="on">
+            <div class="content">
+                <div class="labels">
+                    <label for="PHAR_ID">Pharmacy's ID no:</label>
+                    <label for="PASSWORDS">Password:</label>
+                </div>
+                <div class="inputs">
+                    <input type="text" id="PHAR_ID" name="PHAR_ID" required>
+                    <input type="PASSWORDS" id="PASSWORDS" name="PASSWORDS" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="buttons">
+                <input type="submit" value="Login">
+                <input type="submit" value="Cancel">
+            </div>
+        </form>
+    </div>
+</body>
+
 </html>
