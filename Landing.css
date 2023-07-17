@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-
 .navigation{
     width: 100%;
     height: 100vh;
@@ -21,14 +20,8 @@ nav{
     justify-content: space-between;
 }
 .logo{
-    width: 100%;
+    width: 250px;
     cursor: pointer;
-}
-
-nav a{
-    width: 100%;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 nav ul li{
