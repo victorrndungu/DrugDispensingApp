@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Add New Pharmacy</title>
+    <link rel="stylesheet" href="insertPharmacies.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-    <h1>Add New Pharmacy</h1>
-    <form method="post" action="insertPharmacy.php">
-        <label for="PHAR_ID">Pharmacy ID:</label>
-        <input type="number" name="PHAR_ID" required><br>
-        <label for="PHAR_NAME">Pharmacy Name:</label>
-        <input type="text" name="PHAR_NAME" required><br>
-    
-        <label for="PHAR_PHONE">Phone:</label>
-        <input type="number" name="PHAR_PHONE" required><br>
-    
-        <label for="EMAIL">Email Address:</label>
-        <input type="email" name="EMAIL" required><br>
-    
-        <label for="PHAR_ADDRESS">Address:</label>
-        <input type="text" name="PHAR_ADDRESS" required><br>
-    
-        <label for="CONTRACT_ID">Contract ID:</label>
-        <input type="number" name="CONTRACT_ID" required><br>
 
-        <label for="PASSWORDS">Password:</label>
-        <input type="password" name="PASSWORDS" required><br>
-    
-        <input type="submit" value="Add Pharmacy">
-    </form>
+<body>
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Sign Up</h1>
+        <hr>
+        <form method="post" action="insertPharmacy.php">
+            <div class="content">
+                <div class="labels">
+                    <label for="PHAR_ID">Pharmacy ID:</label>
+                    <label for="PHAR_NAME">Pharmacy Name:</label>
+                    <label for="PHAR_PHONE">Phone:</label>
+                    <label for="EMAIL">Email Address:</label>
+                    <label for="PHAR_ADDRESS">Address:</label>
+                    <label for="CONTRACT_ID">Contract ID:</label>
+                    <label for="PASSWORDS">Password:</label>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="PHAR_ID" required><br>
+                    <input type="text" name="PHAR_NAME" required><br>
+                    <input type="number" name="PHAR_PHONE" required><br>
+                    <input type="email" name="EMAIL" required><br>
+                    <input type="text" name="PHAR_ADDRESS" required><br>
+                    <input type="number" name="CONTRACT_ID" required><br>
+                    <input type="password" name="PASSWORDS" required><br>
+                </div>
+            </div>
+            <input type="submit" value="Add Pharmacy">
+        </form>
+    </div>
 </body>
+
 </html>
