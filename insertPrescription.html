@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add New Prescription</title>
+    <link rel="stylesheet" href="insertPrescriptions.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Add Prescription</h1>
+        <hr>
+        <form method="post" action="insertPrescription.php">
+            <div class="content">
+                <div class="labels">
+                    <label for="prescription_id">Prescription ID:</label>
+                    <label for="drug_id">Drug ID:</label>
+                    <label for="drug_dosage">Drug Dosage:</label>
+                    <label for="PATIENT_ID">Patient ID:</label>
+                    <label for="DOCTORS_ID">Doctor ID:</label>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="prescription_id" required><br>
+                    <input type="number" name="drug_id" required><br>
+                    <input type="text" name="drug_dosage" required><br>
+                    <input type="number" name="PATIENT_ID" required><br>
+                    <input type="number" name="DOCTORS_ID" required><br>
+                </div>
+            </div>
+            <input type="submit" value="Add Prescription">
+        </form>
+    </div>
+</body>
+
+</html>

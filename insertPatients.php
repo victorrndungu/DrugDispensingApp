@@ -11,18 +11,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $age = $_POST["AGE"];
     $email = $_POST["EMAIL_ADDRESS"];
     $password = $_POST["PASSWORDS"];
-    // Prepare and execute the SQL query
-    $sql = "INSERT INTO patients_info (PATIENT_ID, FIRST_NAME, LAST_NAME, GENDER, AGE, EMAIL_ADDRESS, PASSWORDS)
-            VALUES ('$patient_id', '$first_name', '$last_name', '$gender', '$age', '$email', '$password')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New patient added successfully!";
-    } else {
-        if ($conn->errno === 1062) {
-            echo "Error: Patient with ID $patient_id already exists.";
+    // Prepare the SQL statement with parameter placeholders
+    $sql = "INSERT INTO patients_info (PATIENT_ID, FIRST_NAME, LAST_NAME, GENDER, AGE, EMAIL_ADDRESS, PASSWORDS)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    // Prepare the statement
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        // Bind the parameters to the statement
+        $stmt->bind_param("isssiss", $patient_id, $first_name, $last_name, $gender, $age, $email, $password);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            echo "New patient added successfully!";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            if ($conn->errno === 1062) {
+                echo "Error: Patient with ID $patient_id already exists.";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
         }
+
+        // Close the statement
+        $stmt->close();
+    } else {
+        echo "Error: " . $conn->error;
     }
 
     // Close the database connection

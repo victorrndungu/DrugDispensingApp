@@ -25,6 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
+    $loginSql = "SELECT DOCTORS_ID FROM doctors_info WHERE DOCTORS_ID= '$doctors_id' AND PASSWORDS = '$password'";
+    $result = $conn->query($loginSql);
+
+    if ($result->num_rows > 0) {
+        // Successful login, grant access
+        // Redirect to the dashboard
+        header("Location: doctorDash.html");
+        exit;
+    } else {
+        // Invalid credentials, deny access
+        echo "Invalid credentials. Please try again.";
+    }
 
     // Close the database connection
     $conn->close();

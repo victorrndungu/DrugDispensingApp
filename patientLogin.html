@@ -1,18 +1,14 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Add New Company</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="companylogin.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-
     <div class="form">
         <div class="home">
             <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
@@ -25,12 +21,12 @@
         <form action="patientLogin.php" method="post" autocomplete="on">
             <div class="content">
                 <div class="labels">
-                    <label for="PATIENT_ID">Patients ID no:</label>
-                    <label for="passwords">Password:</label>
+                    <label for="PATIENT_ID">Patient ID:</label>
+                    <label for="PASSWORDS">Password:</label>
                 </div>
                 <div class="inputs">
-                    <input type="text" id=PATIENT_ID name="PATIENT_ID" required>
-                    <input type="passwords" id="passwords" name="passwords" required>
+                    <input type="text" id="PATIENT_ID" name="PATIENT_ID" required>
+                    <input type="password" id="PASSWORDS" name="PASSWORDS" required>
                 </div>
             </div>
             <br><br>
@@ -41,5 +37,4 @@
         </form>
     </div>
 </body>
-
 </html>

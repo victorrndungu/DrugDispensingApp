@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["PASSWORDS"];
 
     // Prepare and execute the SQL query to insert the new company
-    $insertSql = "INSERT INTO company_info (`COMPANY_ID`, `Company_Name`, `Company_Phone`, `Company_Address`, `Company_Email`,, `PASSWORDS`)
+    $insertSql = "INSERT INTO company_info (`COMPANY_ID`, `Company_Name`, `Company_Phone`, `Company_Address`, `Company_Email`, `PASSWORDS`)
                   VALUES ('$company_id', '$company_name', '$company_phone', '$company_address', '$company_email', '$password')";
 
     if ($conn->query($insertSql) === TRUE) {

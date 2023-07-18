@@ -4,7 +4,7 @@ require("EasyDawa.php");
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get form data
-    $supervisor_id = $_POST["Supervisor_id"];
+    $supervisor_id = $_POST["Supervisor_ID"];
     $first_name = $_POST["FIRST_NAME"];
     $last_name = $_POST["LAST_NAME"];
     $phone = $_POST["Phone"];
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["PASSWORDS"];
 
     // Prepare and execute the SQL query to insert the new supervisor
-    $insertSql = "INSERT INTO supervisor_details (`Supervisor_id`, `FIRST_NAME`, `LAST_NAME`, `Phone`, `Email_Address`, `PASSWORDS`)
+    $insertSql = "INSERT INTO supervisor_details (`Supervisor_ID`, `FIRST_NAME`, `LAST_NAME`, `Phone`, `Email_Address`, `PASSWORDS`)
                   VALUES ('$supervisor_id', '$first_name', '$last_name', '$phone', '$email_address', '$password')";
 
     if ($conn->query($insertSql) === TRUE) {

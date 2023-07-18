@@ -1,42 +1,37 @@
 <?php
 require("EasyDawa.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["PHAR_ID"]) && isset($_POST["PASSWORDS"])) {
         $PHAR_ID = $_POST["PHAR_ID"];
         $PASSWORDS = $_POST["PASSWORDS"];
 
-        // Prepare and bind the SQL query with parameters
-        $stmt = $conn->prepare("SELECT pharname, PASSWORDS FROM pharmacyinfo WHERE PHAR_ID = ?");
-        $stmt->bind_param("i", $PHAR_ID);
+        // Prepare and execute the SQL query
+        $stmt = $conn->prepare("SELECT pharname FROM pharmacyinfo WHERE PHAR_ID = ? AND PASSWORDS = ?");
+        $stmt->bind_param("is", $PHAR_ID, $PASSWORDS);
 
         $stmt->execute();
 
         // Bind the result
-        $stmt->bind_result($pharname, $hashedPassword);
+        $stmt->bind_result($phar_name);
 
         // Check if a matching record is found
         if ($stmt->fetch()) {
-            // Verify the password
-            if (password_verify($PASSWORDS, $hashedPassword)) {
-                // Successful login, grant access
-                echo "Welcome " . $pharname;
-            } else {
-                // Invalid credentials, deny access
-                echo "Invalid credentials. Please try again.";
-            }
+            // Successful login, grant access
+            echo "Welcome " . $phar_name;
         } else {
             // Invalid credentials, deny access
             echo "Invalid credentials. Please try again.";
         }
 
-        // Close the statement and the database connection
+        // Close the statement
         $stmt->close();
-        $conn->close();
     } else {
         echo "Invalid request. Please provide both PHAR_ID and PASSWORDS.";
     }
 } else {
     echo "Invalid request method. Only POST requests are allowed.";
 }
+
+$conn->close();
 ?>

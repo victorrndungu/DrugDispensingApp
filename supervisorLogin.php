@@ -31,6 +31,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Invalid request method. Only POST requests are allowed.";
 }
+$loginSql = "SELECT Supervisor_id FROM supervisor_details WHERE Supervisor_id = '$supervisor_id' AND PASSWORDS = '$password'";
+    $result = $conn->query($loginSql);
 
+    if ($result->num_rows > 0) {
+        // Successful login, grant access
+        // Redirect to the dashboard
+        header("Location: supervisorDash.html");
+        exit;
+    } else {
+        // Invalid credentials, deny access
+        echo "Invalid credentials. Please try again.";
+    }
 $conn->close();
 ?>

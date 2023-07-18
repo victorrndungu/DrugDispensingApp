@@ -1,13 +1,14 @@
 <?php
 require("EasyDawa.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["PATIENT_ID"]) && isset($_POST["passwords"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (isset($_POST["PATIENT_ID"]) && isset($_POST["PASSWORDS"])) {
         $PATIENT_ID = $_POST["PATIENT_ID"];
-        $passwords = $_POST["passwords"];
+        $PASSWORDS = $_POST["PASSWORDS"];
 
-        $stmt = $conn->prepare("SELECT FIRST_NAME, LAST_NAME FROM patients_info WHERE PATIENT_ID = ? AND passwords = ?");
-        $stmt->bind_param("is", $PATIENT_ID, $passwords);
+        // Prepare and execute the SQL query
+        $stmt = $conn->prepare("SELECT FIRST_NAME, LAST_NAME FROM patients_info WHERE PATIENT_ID = ? AND PASSWORDS = ?");
+        $stmt->bind_param("is", $PATIENT_ID, $PASSWORDS);
 
         $stmt->execute();
 
@@ -26,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Close the statement
         $stmt->close();
     } else {
-        echo "Invalid request. Please provide both PATIENT_ID and passwords.";
+        echo "Invalid request. Please provide both PATIENT_ID and PASSWORDS.";
     }
 } else {
     echo "Invalid request method. Only POST requests are allowed.";

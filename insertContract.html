@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="insertDoctors.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Sign Up</h1>
+        <hr>
+        <form method="post" action="insertContracts.php">
+            <div class="content">
+                <div class="labels">
+                    <label for="Contract_ID">Contract ID:</label>
+                    <label for="Contract_Start_Date">Contract Start Date:</label>
+                    <label for="Contract_End_Date">Contract End Date:</label>
+                    <label for="PHAR_ID">Pharmacy ID:</label>
+                    <label for="COMPANY_ID">Company ID:</label>
+               
+                </div>
+                <div class="inputs">
+                    <input type="number" name="Contract_ID" required><br>
+                    <input type="date" name="Contract_Start_Date" required><br>
+                    <input type="date" name="Contract_End_Date" required><br>
+                    <input type="number" name="PHAR_ID" required><br>
+                    <input type="number" name="COMPANY_ID" required><br>
+                    
+                </div>
+            </div>
+            <input type="submit" value="Add Contract">
+        </form>
+    </div>
+</body>
+
+</html>

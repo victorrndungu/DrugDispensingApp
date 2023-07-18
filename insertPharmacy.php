@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt) {
             // Bind the parameters
-            $stmt->bind_param("isssssi", $phar_id, $phar_name, $phar_phone, $email, $phar_address, $passwords);
+            $stmt->bind_param("isisss", $phar_id, $phar_name, $phar_phone, $email, $phar_address, $passwords);
+
 
             if ($stmt->execute()) {
                 echo "New pharmacy added successfully!";
