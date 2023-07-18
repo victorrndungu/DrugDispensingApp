@@ -1,22 +1,46 @@
 <head>
-    <title>Add New Supervisor</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="insertSupervisors.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <h1>Add New Supervisor</h1>
-    <form method="post" action="insertSupervisor.php">
-        <label for="Supervisor_ID">Supervisor ID:</label>
-        <input type="number" name="Supervisor_ID" required><br>
-        <label for="FIRST_NAME">First Name:</label>
-        <input type="text" name="FIRST_NAME" required><br>
-        <label for="LAST_NAME">Last Name:</label>
-        <input type="text" name="LAST_NAME" required><br>
-        <label for="Phone">Phone:</label>
-        <input type="number" name="Phone" required><br>
-        <label for="Email_Address">Email Address:</label>
-        <input type="email" name="Email_Address" required><br>      
-        <label for="PASSWORDS">Password:</label>
-        <input type="password" name="PASSWORDS" required><br>
-        <input type="submit" value="Add Supervisor">
-    </form>
+    <div class="form">
+
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Sign Up</h1>
+        <hr>
+        <form method="post" action="insertDoctors.css">
+            <div class="content">
+                <div class="labels">
+                    <label for="Supervisor_ID">Supervisor ID:</label>
+                    <label for="FIRST_NAME">First Name:</label>
+                    <label for="LAST_NAME">Last Name:</label>
+                    <label for="Phone">Phone:</label>
+                    <label for="Email_Address">Email Address:</label>
+                    <label for="Contract_ID">Contract ID:</label>
+                    <label for="PASSWORDS">Password:</label>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="Supervisor_ID" required><br>
+                    <input type="text" name="FIRST_NAME" required><br>
+                    <input type="text" name="LAST_NAME" required><br>
+                    <input type="number" name="Phone" required><br>
+                    <input type="email" name="Email_Address" required><br>
+                    <input type="number" name="Contract_ID" required><br>
+                    <input type="password" name="PASSWORDS" required><br>
+                </div>
+            </div>
+            <input type="submit" value="Add Supervisor">
+        </form>
+    </div>
 </body>
+
 </html>

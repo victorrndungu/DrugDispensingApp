@@ -1,0 +1,74 @@
+body{
+    margin: 50px;
+    padding: 100px;
+    background-color: rgb(255, 115, 255);
+}
+
+.form{
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    border-radius: 30px;
+    padding: 50px;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+}
+
+h2{
+    text-align: center;
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+}
+
+form{
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr{
+    color: white;
+}
+
+select{
+    width: 70%;
+    height: 25px;
+}
+
+img{
+    height: 50px;
+    width: 250px;
+}   
+
+.home{
+    justify-content: center;
+}
+
+option{
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    justify-content: space-between;
+}
+input{
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+    height: 30px;
+    border-radius: 10px;
+    width: 90px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+
+@media screen and (max-width: 992px) {
+    
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    
+  }

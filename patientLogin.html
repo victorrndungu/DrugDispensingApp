@@ -1,19 +1,45 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Patient Login</title>
+    <title>Add New Company</title>
+    <link rel="stylesheet" href="companylogin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <form action="patientLogin.php" method="post" autocomplete="on">
-        <label for="PATIENT_ID">Patients ID no:</label>
-        <input type="text" id="PATIENT_ID" name="PATIENT_ID" required>
+
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Log In</h1>
+        <hr>
         <br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <input type="submit" value="Login">
-        <input type="submit" value="Cancel">    
-    </form>
+        <form action="patientLogin.php" method="post" autocomplete="on">
+            <div class="content">
+                <div class="labels">
+                    <label for="PATIENT_ID">Patients ID no:</label>
+                    <label for="passwords">Password:</label>
+                </div>
+                <div class="inputs">
+                    <input type="text" id=PATIENT_ID name="PATIENT_ID" required>
+                    <input type="passwords" id="passwords" name="passwords" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="buttons">
+                <input type="submit" value="Login">
+                <input type="submit" value="Cancel">
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>

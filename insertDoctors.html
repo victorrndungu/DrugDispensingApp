@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Add New Doctor</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="insertDoctors.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <h1>Add New Doctor</h1>
-    <form method="post" action="insertDoctors.php">
-        <label for="DOCTORS_ID">Doctor ID:</label>
-        <input type="number" name="DOCTORS_ID" required><br>
-
-        <label for="FIRST_NAME">First Name:</label>
-        <input type="text" name="FIRST_NAME" required><br>
-
-        <label for="LAST_NAME">Last Name:</label>
-        <input type="text" name="LAST_NAME" required><br>
-
-        <label for="SPECIALITY">Speciality:</label>
-        <input type="text" name="SPECIALITY" required><br>
-
-        <label for="YRS_OF_EXPERIENCE">Years of Experience:</label>
-        <input type="number" name="YRS_OF_EXPERIENCE" required><br>
-
-        <label for="EMAIL_ADDRESS">Email Address:</label>
-        <input type="email" name="EMAIL_ADDRESS" required><br>
-
-        <label for="PASSWORDS">Password:</label>
-        <input type="password" name="PASSWORDS" required><br>
-
-        <input type="submit" value="Add Doctor">
-    </form>
+    <div class="form">
+        <div class="home">
+            <a href="Landingdata.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <br>
+        <hr>
+        <h1>Sign Up</h1>
+        <hr>
+        <form method="post" action="insertDoctors.php">
+            <div class="content">
+                <div class="labels">
+                    <label for="DOCTORS_ID">Doctor ID:</label>
+                    <label for="FIRST_NAME">First Name:</label>
+                    <label for="LAST_NAME">Last Name:</label>
+                    <label for="YRS_OF_EXPERIENCE">Years of Experience:</label>
+                    <label for="SPECIALITY">Speciality:</label>
+                    <label for="EMAIL_ADDRESS">Email Address:</label>
+                    <label for="PASSWORDS">Password:</label>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="DOCTORS_ID" required><br>
+                    <input type="text" name="FIRST_NAME" required><br>
+                    <input type="text" name="LAST_NAME" required><br>
+                    <input type="text" name="SPECIALITY" required><br>
+                    <input type="number" name="YRS_OF_EXPERIENCE" required><br>
+                    <input type="email" name="EMAIL_ADDRESS" required><br>
+                    <input type="password" name="PASSWORDS" required><br>
+                </div>
+            </div>
+            <input type="submit" value="Add Doctor">
+        </form>
+    </div>
 </body>
+
 </html>
