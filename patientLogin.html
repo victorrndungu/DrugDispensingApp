@@ -1,11 +1,19 @@
+
+<!DOCTYPE html>
 <html>
-<form action="patientLogin.php" method="post" autocomplete="on">
-    <label for="PATIENT_ID">Patients ID no:</label>
-    <input type="text" id= PATIENT_ID name="PATIENT_ID" required>
-    <br><br>
-    <label for="passwords">Password:</label>
-    <input type="passwords" id="passwords" name="passwords" required>
-    <br><br>
-    <input type="submit" value="Login">
-    <input type="submit" value="Cancel">    
+<head>
+    <title>Patient Login</title>
+</head>
+<body>
+    <form action="patientLogin.php" method="post" autocomplete="on">
+        <label for="PATIENT_ID">Patients ID no:</label>
+        <input type="text" id="PATIENT_ID" name="PATIENT_ID" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="Login">
+        <input type="submit" value="Cancel">    
+    </form>
+</body>
 </html>

@@ -3,7 +3,7 @@
 <?php
 require("EasyDawa.php");
 
-$sql = "SELECT PHAR_ID, pharname, pharphone, email, PharAddress, Contract_ID FROM pharmacyinfo"; 
+$sql = "SELECT PHAR_ID, pharname, pharphone, email, PharAddress FROM pharmacyinfo"; 
 $result = $conn->query($sql);
 ?>
 
@@ -15,7 +15,6 @@ $result = $conn->query($sql);
             <th>Phone Number</th>
             <th>Email</th>
             <th>Address</th>
-            <th>Contract ID</th>
             <th>Actions</th>
         </tr>
 
@@ -26,7 +25,6 @@ $result = $conn->query($sql);
                 <td><?php echo $row["pharphone"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
                 <td><?php echo $row["PharAddress"]; ?></td>
-                <td><?php echo $row["Contract_ID"]; ?></td>
                 <td>
                     <form method="post" action="editPharmacies.php">
                         <input type="hidden" name="PHAR_ID" value="<?php echo $row["PHAR_ID"]; ?>">

@@ -3,7 +3,7 @@
 <?php
 require("EasyDawa.php");
 
-$sql = "SELECT COMPANY_ID, Company_Name, Company_Phone, Company_Address, Company_Email, Contract_ID FROM company_info"; 
+$sql = "SELECT COMPANY_ID, Company_Name, Company_Phone, Company_Address, Company_Email FROM company_info"; 
 $result = $conn->query($sql);
 ?>
 
@@ -15,7 +15,6 @@ $result = $conn->query($sql);
             <th>Phone Number</th>
             <th>Address</th>
             <th>Email</th>
-            <th>Contract ID</th>
             <th>Actions</th>
         </tr>
 
@@ -26,7 +25,6 @@ $result = $conn->query($sql);
                 <td><?php echo $row["Company_Phone"]; ?></td>
                 <td><?php echo $row["Company_Address"]; ?></td>
                 <td><?php echo $row["Company_Email"]; ?></td>
-                <td><?php echo $row["Contract_ID"]; ?></td>
                 <td>
                     <form method="post" action="editCompanies.php">
                         <input type="hidden" name="COMPANY_ID" value="<?php echo $row["COMPANY_ID"]; ?>">

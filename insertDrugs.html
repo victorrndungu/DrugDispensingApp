@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Drug</title>
+</head>
+<body>
+    <h1>Add New Drug</h1>
+    <form method="post" action="insertDrugs.php">
+        <label for="drug_id">Drug ID:</label>
+        <input type="number" name="drug_id" required><br>
+
+        <label for="drug_name">Drug Name:</label>
+        <input type="text" name="drug_name" required><br>
+
+        <label for="drug_type">Drug Type:</label>
+        <input type="text" name="drug_type" required><br>
+
+        <label for="drug_form">Drug Form:</label>
+        <input type="text" name="drug_form" required><br>
+
+        <input type="submit" value="Add Drug">
+    </form>
+</body>
+</html>

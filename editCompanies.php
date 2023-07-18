@@ -40,8 +40,6 @@ $conn->close();
         <input type="text" name="Company_Address" value="<?php echo $row["Company_Address"] ?? ""; ?>"><br>
         <label for="Company_Email">Company Email:</label>
         <input type="text" name="Company_Email" value="<?php echo $row["Company_Email"] ?? ""; ?>"><br>
-        <label for="Contract_ID">Contract ID:</label>
-        <input type="text" name="Contract_ID" value="<?php echo $row["Contract_ID"] ?? ""; ?>"><br>
 
         <input type="submit" value="Update">
     <?php endif; ?>

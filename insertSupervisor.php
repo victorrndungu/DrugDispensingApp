@@ -4,47 +4,43 @@ require("EasyDawa.php");
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get form data
-    $supervisor_id = $_POST["Supervisor_ID"];
+    $supervisor_id = $_POST["Supervisor_id"];
     $first_name = $_POST["FIRST_NAME"];
     $last_name = $_POST["LAST_NAME"];
     $phone = $_POST["Phone"];
     $email_address = $_POST["Email_Address"];
-    $contract_id = $_POST["Contract_ID"];
-    $passwords = $_POST["PASSWORDS"];
+    $password = $_POST["PASSWORDS"];
 
-    // Check if PASSWORDS is provided
-    if (!empty($passwords)) {
-        // Prepare and execute the SQL query
-        $sql = "INSERT INTO supervisor_details (Supervisor_ID, FIRST_NAME, LAST_NAME, Phone, Email_Address, Contract_ID, PASSWORDS)
-                VALUES (?, ?, ?, ?, ?, ?, ?)";
+    // Prepare and execute the SQL query to insert the new supervisor
+    $insertSql = "INSERT INTO supervisor_details (`Supervisor_id`, `FIRST_NAME`, `LAST_NAME`, `Phone`, `Email_Address`, `PASSWORDS`)
+                  VALUES ('$supervisor_id', '$first_name', '$last_name', '$phone', '$email_address', '$password')";
 
-        // Prepare the statement
-        $stmt = $conn->prepare($sql);
-
-        if ($stmt) {
-            // Bind the parameters
-            $stmt->bind_param("issssss", $supervisor_id, $first_name, $last_name, $phone, $email_address, $contract_id, $passwords);
-
-            if ($stmt->execute()) {
-                echo "New supervisor added successfully!";
-            } else {
-                if ($conn->errno === 1062) {
-                    echo "Error: Supervisor with ID $supervisor_id already exists.";
-                } else {
-                    echo "Error: " . $stmt->error;
-                }
-            }
-
-            // Close the statement
-            $stmt->close();
-        } else {
-            echo "Error: " . $conn->error;
-        }
+    if ($conn->query($insertSql) === TRUE) {
+        echo "New supervisor added successfully!";
     } else {
-        echo "Error: Password is required.";
+        if ($conn->errno === 1062) {
+            echo "Error: Supervisor with ID $supervisor_id already exists.";
+        } else {
+            echo "Error: " . $insertSql . "<br>" . $conn->error;
+        }
+        exit;
     }
-}
 
-// Close the database connection
-$conn->close();
+    // Check if the login is successful
+    $loginSql = "SELECT Supervisor_id FROM supervisor_details WHERE Supervisor_id = '$supervisor_id' AND PASSWORDS = '$password'";
+    $result = $conn->query($loginSql);
+
+    if ($result->num_rows > 0) {
+        // Successful login, grant access
+        // Redirect to the dashboard
+        header("Location: supervisorDash.html");
+        exit;
+    } else {
+        // Invalid credentials, deny access
+        echo "Invalid credentials. Please try again.";
+    }
+
+    // Close the database connection
+    $conn->close();
+}
 ?>

@@ -40,8 +40,6 @@ $conn->close();
         <input type="text" name="email" value="<?php echo $row["email"] ?? ""; ?>"><br>
         <label for="PharAddress">Pharmacy Address:</label>
         <input type="text" name="PharAddress" value="<?php echo $row["PharAddress"] ?? ""; ?>"><br>
-        <label for="contract_ID">Contract ID:</label>
-        <input type="text" name="contract_ID" value="<?php echo $row["contract_ID"] ?? ""; ?>"><br>
 
         <input type="submit" value="Update">
     <?php endif; ?>
