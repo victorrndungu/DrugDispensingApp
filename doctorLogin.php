@@ -1,5 +1,6 @@
 <?php
 require("EasyDawa.php");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["DOCTORS_ID"]) && isset($_POST["PASSWORDS"])) {
@@ -18,6 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->fetch()) {
             // Successful login, grant access
             echo "Welcome " . $first_name . " " . $last_name;
+
+            // Store the doctor's ID in the session
+            $_SESSION["DOCTORS_ID"] = $DOCTORS_ID;
+
+            // Redirect to the dashboard
+            header("Location: doctorDash.html");
+            exit;
         } else {
             // Invalid credentials, deny access
             echo "Invalid credentials. Please try again.";
@@ -34,3 +42,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+

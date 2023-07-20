@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $COMPANY_ID = $_POST["COMPANY_ID"];
         $PASSWORDS = $_POST["PASSWORDS"];
 
+        // Prepare and execute the SQL query
         $stmt = $conn->prepare("SELECT Company_Name FROM company_info WHERE COMPANY_ID = ? AND PASSWORDS = ?");
         $stmt->bind_param("is", $COMPANY_ID, $PASSWORDS);
 
@@ -17,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if a matching record is found
         if ($stmt->fetch()) {
             // Successful login, grant access
-            echo "Welcome " . $Company_Name;
+            // Redirect to the company dashboard page
+            header("Location: companyDash.html");
+            exit;
         } else {
             // Invalid credentials, deny access
             echo "Invalid credentials. Please try again.";

@@ -1,36 +1,47 @@
 <?php
 require("EasyDawa.php");
 
+session_start();
+
+// Check if the patient is already logged in
+if (isset($_SESSION["patient_id"])) {
+    header("Location: patientDash.html");
+    exit;
+}
+
+// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["PATIENT_ID"]) && isset($_POST["PASSWORDS"])) {
         $PATIENT_ID = $_POST["PATIENT_ID"];
         $PASSWORDS = $_POST["PASSWORDS"];
 
         // Prepare and execute the SQL query
-        $stmt = $conn->prepare("SELECT FIRST_NAME, LAST_NAME FROM patients_info WHERE PATIENT_ID = ? AND PASSWORDS = ?");
+        $stmt = $conn->prepare("SELECT PATIENT_ID FROM patients_info WHERE PATIENT_ID = ? AND PASSWORDS = ?");
         $stmt->bind_param("is", $PATIENT_ID, $PASSWORDS);
 
         $stmt->execute();
 
         // Bind the result
-        $stmt->bind_result($first_name, $last_name);
+        $stmt->bind_result($patient_id);
 
         // Check if a matching record is found
         if ($stmt->fetch()) {
-            // Successful login, grant access
-            echo "Welcome " . $first_name . " " . $last_name;
+            // Successful login, set the patient ID in session
+            $_SESSION["patient_id"] = $patient_id;
+
+            // Redirect to the patient dashboard
+            header("Location: patientDash.html");
+            exit;
         } else {
-            // Invalid credentials, deny access
-            echo "Invalid credentials. Please try again.";
+            // Invalid credentials, show error message
+            $error_message = "Invalid credentials. Please try again.";
         }
 
         // Close the statement
         $stmt->close();
     } else {
-        echo "Invalid request. Please provide both PATIENT_ID and PASSWORDS.";
+        $error_message = "Invalid request. Please provide both PATIENT_ID and PASSWORDS.";
     }
-} else {
-    echo "Invalid request method. Only POST requests are allowed.";
 }
 
 $conn->close();

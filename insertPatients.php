@@ -25,6 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Execute the statement
         if ($stmt->execute()) {
             echo "New patient added successfully!";
+            // Redirect to the dashboard
+            header("Location: patientDash.html");
+            exit;
         } else {
             if ($conn->errno === 1062) {
                 echo "Error: Patient with ID $patient_id already exists.";

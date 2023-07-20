@@ -1,62 +1,64 @@
-body{
+body {
     margin: 50px;
     padding: 100px;
     background-color: rgb(255, 115, 255);
     font-family: "Roboto", "Arial", "Helvetica", sans-serif;
     height: 100vh;
-}
-
-.form{
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  }
+  
+  .form {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
     border-radius: 30px;
     padding: 50px;
     background-color: white;
-}
-
-img{
+  }
+  
+  img {
     height: 50px;
     width: 250px;
-}
-
-.content{
+  }
+  
+  .content {
     display: flex;
     flex-direction: row;
-}
-
-.labels{
+  }
+  
+  .labels {
     display: flex;
     flex-direction: column;
     width: 50%;
-}
-
-.inputs{
+  }
+  
+  .inputs {
     display: flex;
     flex-direction: column;
     width: 50%;
     justify-content: space-between;
-}
-
-label{
+  }
+  
+  label {
     height: 40px;
-}
-
-.gender{
+    font-weight: bold;
+  }
+  
+  .gender {
     display: flex;
     flex-direction: row;
-}
-
-input[type=submit]{
+  }
+  
+  input[type=submit] {
     font-family: "Roboto", "Arial", "Helvetica", sans-serif;
     height: 30px;
     border-radius: 10px;
     width: 150px;
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-}
-
-/*
-form{
-    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
+  }
+  
+  /* Adjust the form element to match the form structure */
+  form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-}*/
+    margin-top: 20px;
+  }
+  
