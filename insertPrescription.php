@@ -2,7 +2,6 @@
 require("EasyDawa.php");
 session_start();
 
-// Assuming $conn is defined in EasyDawa.php, otherwise establish the connection here
 
 // Check if the doctor is logged in
 if (!isset($_SESSION["DOCTORS_ID"])) {
