@@ -1,9 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="display.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
 
 <?php
 require("EasyDawa.php");
 
-$sql = "SELECT COMPANY_ID, Company_Name, Company_Phone, Company_Address, Company_Email FROM company_info"; 
+$sql = "SELECT COMPANY_ID, Company_Name, Company_Phone, Company_Address, Company_Email FROM company_info";
 $result = $conn->query($sql);
 ?>
 
@@ -46,4 +64,3 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
-
