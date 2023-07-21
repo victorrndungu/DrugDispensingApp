@@ -1,6 +1,5 @@
 <?php
 require("EasyDawa.php");
-session_start();
 
 
 // Check if the doctor is logged in

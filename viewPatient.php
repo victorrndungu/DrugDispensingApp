@@ -1,10 +1,12 @@
 <?php
 require("EasyDawa.php");
-session_start();
 
+// Check if the session is not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!isset($_SESSION["DOCTORS_ID"])) {
-   
     header("Location: doctorLogin.html");
     exit;
 }
@@ -47,34 +49,30 @@ $result = $conn->query($sql);
         <h1>Patients who have selected you</h1>
         <hr>
         <?php if ($result->num_rows > 0) : ?>
-            <div class="table">
+            <table border="2">
+                <tr>
+                    <th>PATIENT_ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                </tr>
 
-                <table border="2">
+                <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
-                        <th>PATIENT_ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email Address</th>
+                        <td><?php echo $row["PATIENT_ID"]; ?></td>
+                        <td><?php echo $row["FIRST_NAME"]; ?></td>
+                        <td><?php echo $row["LAST_NAME"]; ?></td>
+                        <td><?php echo $row["EMAIL_ADDRESS"]; ?></td>
+                        <td>
+                            <form method="post" action="insertPrescription.php">
+                                <input type="hidden" name="PATIENT_ID" value="<?php echo $row["PATIENT_ID"]; ?>">
+                                <input type="submit" value="Make Prescription">
+                            </form>
+                        </td>
                     </tr>
-    
-                    <?php while ($row = $result->fetch_assoc()) : ?>
-                        <tr>
-                            <td><?php echo $row["PATIENT_ID"]; ?></td>
-                            <td><?php echo $row["FIRST_NAME"]; ?></td>
-                            <td><?php echo $row["LAST_NAME"]; ?></td>
-                            <td><?php echo $row["EMAIL_ADDRESS"]; ?></td>
-                            <td>
-                                <form method="post" action="viewDrugs.php">
-                                    <input type="hidden" name="PATIENT_ID" value="<?php echo $row["PATIENT_ID"]; ?>">
-                                    <input type="submit" value="Make Prescription">
-                                </form>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
-    
-                </table>
-            </div>
+                <?php endwhile; ?>
 
+            </table>
         <?php else : ?>
             <p>No patients found.</p>
         <?php endif; ?>
