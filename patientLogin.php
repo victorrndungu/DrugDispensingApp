@@ -2,8 +2,6 @@
 require("EasyDawa.php");
 
 session_start();
-
-// Check if the patient is already logged in
 if (isset($_SESSION["patient_id"])) {
     header("Location: patientDash.html");
     exit;

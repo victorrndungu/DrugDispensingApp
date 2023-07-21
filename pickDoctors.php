@@ -1,6 +1,10 @@
 <?php
 require("EasyDawa.php");
-session_start();
+
+// Check if the session is not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Check if the patient is logged in
 if (!isset($_SESSION["patient_id"])) {
@@ -75,3 +79,4 @@ $conn->close();
 </body>
 
 </html>
+

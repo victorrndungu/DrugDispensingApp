@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($stmt->execute()) {
                 echo "New pharmacy added successfully!";
+                 // Redirect to the dashboard
+            header("Location: pharmacyDash.html");
+            exit;
             } else {
                 if ($conn->errno === 1062) {
                     echo "Error: Pharmacy with ID $phar_id already exists.";

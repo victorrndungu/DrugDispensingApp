@@ -1,0 +1,73 @@
+<?php
+// include the database connection file
+require("EasyDawa.php");
+
+// Check if the pharmacy is logged in
+// You can use session or any other authentication mechanism here
+// For example, if you are using session:
+session_start();
+if (!isset($_SESSION["PHAR_ID"])) {
+    header("Location: pharmacyLogin.html");
+    exit;
+}
+
+// Retrieve PHAR_ID from the session
+$PHAR_ID = $_SESSION["PHAR_ID"];
+
+// Fetch drug prices set by the current pharmacy
+$sql = "SELECT dp.drug_id, dp.drug_price, di.drug_name
+        FROM drug_prices dp
+        INNER JOIN drug_info di ON dp.drug_id = di.drug_id
+        WHERE dp.PHAR_ID = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $PHAR_ID);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Prices</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>View Prices</h1>
+    <?php if ($result->num_rows > 0) : ?>
+        <table>
+            <tr>
+                <th>Drug ID</th>
+                <th>Drug Name</th>
+                <th>Price</th>
+            </tr>
+
+            <?php while ($row = $result->fetch_assoc()) : ?>
+                <tr>
+                    <td><?php echo $row["drug_id"]; ?></td>
+                    <td><?php echo $row["drug_name"]; ?></td>
+                    <td><?php echo $row["drug_price"]; ?></td>
+                </tr>
+            <?php endwhile; ?>
+
+        </table>
+    <?php else : ?>
+        <p>No prices set by this pharmacy.</p>
+    <?php endif; ?>
+
+</body>
+</html>

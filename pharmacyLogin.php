@@ -1,5 +1,6 @@
 <?php
 require("EasyDawa.php");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["PHAR_ID"]) && isset($_POST["PASSWORDS"])) {
@@ -17,8 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Check if a matching record is found
         if ($stmt->fetch()) {
-            // Successful login, grant access
-            echo "Welcome " . $phar_name;
+            // Successful login, set the pharmacy ID in session
+            $_SESSION["PHAR_ID"] = $PHAR_ID;
+
+            // Redirect to the pharmacy dashboard
+            header("Location: pharmacyDash.html");
+            exit;
         } else {
             // Invalid credentials, deny access
             echo "Invalid credentials. Please try again.";

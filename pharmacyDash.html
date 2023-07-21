@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pharmacy Dashboard</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            text-decoration: skyblue;
+            background-color: rgb(237, 90, 212);
+            color: white;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pharmacy Dashboard</h1>
+        <a href="displayPrescriptions.php" class="btn">View All Prescriptions</a>
+        <a href="viewPatPhar.php" class="btn">View Patients</a>
+        <a href="dispensedDrugsHistory.php" class="btn">View History</a>
+        <a href="insertPrices.php" class="btn">Set Prices</a>
+        <a href="viewPrices.php" class="btn">View Your Prices</a>
+        <form action="pharmacyDash.php" method="post">
+            <button class="btn" type="submit">Log Out</button>
+        </form>
+    </div>
+</body>
+</html>
