@@ -1,7 +1,6 @@
 <?php
 require("EasyDawa.php");
 
-
 if (!isset($_SESSION["DOCTORS_ID"])) {
     header("Location: doctorLogin.html");
     exit;
@@ -34,72 +33,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Select Drug</title>
     <link rel="stylesheet" href="viewdrugs.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="LandingAssets/White Icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="LandingAssets/White Icon.png">
 </head>
 
 <body>
     <h1>Select Drug</h1>
     <hr>
-        <form method="post" action="insertPrescription.php">
-            <div class="table">
-
-                <table border="2">
+    <form method="post" action="insertPrescription.php">
+        <div class="table">
+            <table border="2">
+                <tr>
+                    <th>Select</th>
+                    <th>Drug ID</th>
+                    <th>Drug Name</th>
+                    <th>Drug Type</th>
+                    <th>Drug Form</th>
+                </tr>
+                <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
-                        <th>Select</th>
-                        <th>Drug ID</th>
-                        <th>Drug Name</th>
-                        <th>Drug Type</th>
-                        <th>Drug Form</th>
+                        <td>
+                            <input type="radio" name="drug_id" value="<?php echo $row["drug_id"]; ?>" required>
+                        </td>
+                        <td><?php echo $row["drug_id"]; ?></td>
+                        <td><?php echo $row["drug_name"]; ?></td>
+                        <td><?php echo $row["drug_type"]; ?></td>
+                        <td><?php echo $row["drug_form"]; ?></td>
                     </tr>
-                    <?php while ($row = $result->fetch_assoc()) : ?>
-                        <tr>
-                            <td>
-                                <input type="radio" name="drug_id" value="<?php echo $row["drug_id"]; ?>" required>
-                            </td>
-                            <td><?php echo $row["drug_id"]; ?></td>
-                            <td><?php echo $row["drug_name"]; ?></td>
-                            <td><?php echo $row["drug_type"]; ?></td>
-                            <td><?php echo $row["drug_form"]; ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </table>
-            </div>
-            <br>
-            <center><input type="submit" value="Select Drug"></center>
-        </form>
+                <?php endwhile; ?>
+            </table>
+        </div>
+        <br>
+        <center><input type="submit" value="Select Drug"></center>
+    </form>
     <?php if (isset($error_message)) : ?>
         <p><?php echo $error_message; ?></p>
     <?php endif; ?>
-    <form method="post" action="insertPrescription.php">
-        <table border="1">
-            <tr>
-                <th>Select</th>
-                <th>Drug ID</th>
-                <th>Drug Name</th>
-                <th>Drug Type</th>
-                <th>Drug Form</th>
-            </tr>
-            <?php while ($row = $result->fetch_assoc()) : ?>
-                <tr>
-                    <td>
-                        <input type="radio" name="drug_id" value="<?php echo $row["drug_id"]; ?>" required>
-                    </td>
-                    <td><?php echo $row["drug_id"]; ?></td>
-                    <td><?php echo $row["drug_name"]; ?></td>
-                    <td><?php echo $row["drug_type"]; ?></td>
-                    <td><?php echo $row["drug_form"]; ?></td>
-                </tr>
-            <?php endwhile; ?>
-        </table>
-        <input type="submit" value="Select Drug">
-    </form>
     <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
 
 </html>
+
 
 
