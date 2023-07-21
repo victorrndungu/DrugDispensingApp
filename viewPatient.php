@@ -47,30 +47,34 @@ $result = $conn->query($sql);
         <h1>Patients who have selected you</h1>
         <hr>
         <?php if ($result->num_rows > 0) : ?>
-            <table border="2">
-                <tr>
-                    <th>PATIENT_ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email Address</th>
-                </tr>
+            <div class="table">
 
-                <?php while ($row = $result->fetch_assoc()) : ?>
+                <table border="2">
                     <tr>
-                        <td><?php echo $row["PATIENT_ID"]; ?></td>
-                        <td><?php echo $row["FIRST_NAME"]; ?></td>
-                        <td><?php echo $row["LAST_NAME"]; ?></td>
-                        <td><?php echo $row["EMAIL_ADDRESS"]; ?></td>
-                        <td>
-                            <form method="post" action="viewDrugs.php">
-                                <input type="hidden" name="PATIENT_ID" value="<?php echo $row["PATIENT_ID"]; ?>">
-                                <input type="submit" value="Make Prescription">
-                            </form>
-                        </td>
+                        <th>PATIENT_ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Address</th>
                     </tr>
-                <?php endwhile; ?>
+    
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <tr>
+                            <td><?php echo $row["PATIENT_ID"]; ?></td>
+                            <td><?php echo $row["FIRST_NAME"]; ?></td>
+                            <td><?php echo $row["LAST_NAME"]; ?></td>
+                            <td><?php echo $row["EMAIL_ADDRESS"]; ?></td>
+                            <td>
+                                <form method="post" action="viewDrugs.php">
+                                    <input type="hidden" name="PATIENT_ID" value="<?php echo $row["PATIENT_ID"]; ?>">
+                                    <input type="submit" value="Make Prescription">
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+    
+                </table>
+            </div>
 
-            </table>
         <?php else : ?>
             <p>No patients found.</p>
         <?php endif; ?>
