@@ -1,10 +1,12 @@
 <?php
 require("EasyDawa.php");
-session_start();
 
+// Check if the session is not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!isset($_SESSION["DOCTORS_ID"])) {
-   
     header("Location: doctorLogin.html");
     exit;
 }

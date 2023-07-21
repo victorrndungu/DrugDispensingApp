@@ -1,10 +1,7 @@
 <?php
 require("EasyDawa.php");
-session_start();
 
-// Assuming $conn is defined in EasyDawa.php, otherwise establish the connection here
 
-// Check if the doctor is logged in
 if (!isset($_SESSION["DOCTORS_ID"])) {
     header("Location: doctorLogin.html");
     exit;
@@ -13,6 +10,22 @@ if (!isset($_SESSION["DOCTORS_ID"])) {
 // Fetch the drugs information from the database
 $sql = "SELECT drug_id, drug_name, drug_type, drug_form FROM drug_info";
 $result = $conn->query($sql);
+
+// Handle the form submission
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Check if the drug_id is selected
+    if (isset($_POST["drug_id"])) {
+        // Get the selected drug_id
+        $drug_id = $_POST["drug_id"];
+        
+        // Redirect to the insertPrescription.php with the selected drug_id
+        header("Location: insertPrescription.php?drug_id=" . urlencode($drug_id));
+        exit;
+    } else {
+        // If the drug_id is not selected, show an error message
+        $error_message = "Incomplete form data. Please fill in all the required fields.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +37,9 @@ $result = $conn->query($sql);
 
 <body>
     <h1>Select Drug</h1>
+    <?php if (isset($error_message)) : ?>
+        <p><?php echo $error_message; ?></p>
+    <?php endif; ?>
     <form method="post" action="insertPrescription.php">
         <table border="1">
             <tr>
@@ -51,4 +67,5 @@ $result = $conn->query($sql);
 </body>
 
 </html>
+
 
