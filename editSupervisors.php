@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="insertSupervisors.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data</title>
+</head>
+</html>
 <?php
 require("EasyDawa.php");
 
@@ -43,5 +57,6 @@ $conn->close();
 
         <input type="submit" value="Update">
     <?php endif; ?>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </form>
 

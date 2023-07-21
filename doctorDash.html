@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Admin Dashboard</title>
     <style>
+        * {
+            font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+            color: black;
+        }
+
         .container {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 30pxpx;
         }
+
         .btn {
             display: inline-block;
             padding: 10px 20px;
             margin: 10px;
             font-size: 16px;
-            text-decoration: skyblue;
             background-color: rgb(237, 90, 212);
-            color: white;
+            color: black;
             border-radius: 4px;
-            border: none;
+            border: 2px solid black;
             cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover{
+            background-color: white;
+            transition: 10ms;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+        .img {
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .content{
+            width: 80%;
+            align-items: center;
+            margin: auto;
+            background-color: magenta;
+            padding: 20px;
+            margin-top: 100px;
+            border-radius: 20px;
+
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Doctor Dashboard</h1>
-        <a href="viewPatient.php" class="btn">View Your Patients</a>
-         <a href="viewDrugs.php"></a> 
-        <form action="doctorDash.php" method="post">
-            <button class="btn" type="submit">Log Out</button>
+    <div class="content">
+        <div class="img">
+            <a href="homepage.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <hr>
+        <div class="container">
+            <h1>Doctor Dashboard</h1>
+            <hr>
+            <h1>Actions</h1>
+            <hr>
+            <a href="viewPatient.php" class="btn">View Your Patients</a>
+            <a href="viewDrugs.php"class="btn">View The Drugs Avaliable</a>
+            <hr>
+            <form action="doctorDash.php" method="post">
+                <button class="btn" type="submit">Log Out</button>
+            </form>
+        </div>
     </div>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
+
 </html>

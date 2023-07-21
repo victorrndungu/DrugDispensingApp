@@ -1,3 +1,14 @@
+<html>
+    <head>
+    <title>Patients</title>
+        <link rel="stylesheet" href="display.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+</html>
+
 <?php
 require("EasyDawa.php");
 
@@ -44,7 +55,7 @@ $result = $conn->query($sql);
 <?php else : ?>
     <p>No data found.</p>
 <?php endif; ?>
-
+<p>&copy; 2023 EasyDawa. All rights reserved.</p>
 <?php
 $conn->close();
 ?>

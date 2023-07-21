@@ -31,11 +31,23 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo">
+            <a href=""><img src="LandingAssets/Black Logo.png" alt=""></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="Landingdata.php">Home</a></li>
+                <li><a href="doctorDash.html">Back</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
     <div class="container">
         <h1>Patients who have selected you</h1>
-
+        <hr>
         <?php if ($result->num_rows > 0) : ?>
-            <table border="1">
+            <table border="2">
                 <tr>
                     <th>PATIENT_ID</th>
                     <th>First Name</th>
@@ -63,5 +75,6 @@ $result = $conn->query($sql);
             <p>No patients found.</p>
         <?php endif; ?>
     </div>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
 </html>
