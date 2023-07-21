@@ -40,3 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $conn->close();
 ?>
 <p>&copy; 2023 EasyDawa. All rights reserved.</p>
+<html>
+<head>
+    <title>View Patients</title>
+    <link rel="stylesheet" href="viewPatients.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+</html>
