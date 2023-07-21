@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        * {
+            font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 30pxpx;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: rgb(237, 90, 212);
+            color: black;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover{
+            background-color: white;
+            transition: 10ms;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+        .img {
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+    </style>
+
 <head>
     <title>Company Dashboard</title>
 </head>
+
 <body>
+    <div class="img">
+        <img src="LandingAssets/White Logo.png" alt="">
+    </div>
     <h1>Company Dashboard</h1>
+    <hr>
     <a href="insertDrugs.html">Add Drugs</a> <!-- Add Drugs Button -->
     <a href="displayDrugs.php">View Drugs</a> <!-- View Drugs Button -->
-    
+
     <h2>Company Information</h2>
+</body>
