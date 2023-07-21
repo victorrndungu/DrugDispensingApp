@@ -68,6 +68,6 @@ $result = $stmt->get_result();
     <?php else : ?>
         <p>No prices set by this pharmacy.</p>
     <?php endif; ?>
-
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
 </html>
