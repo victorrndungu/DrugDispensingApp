@@ -50,6 +50,7 @@ $result = $stmt->get_result();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="LandingAssets/White Icon.png">
 </head>
 <body>
     <h1>View Prices</h1>
