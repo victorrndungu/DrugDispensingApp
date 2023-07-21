@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Admin Dashboard</title>
     <style>
+        * {
+            font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+            background-color: black;
+            color: white;
+        }
+
         .container {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 30pxpx;
         }
+
         .btn {
             display: inline-block;
             padding: 10px 20px;
             margin: 10px;
             font-size: 16px;
-            text-decoration: skyblue;
             background-color: rgb(237, 90, 212);
-            color: white;
+            color: black;
             border-radius: 4px;
             border: none;
             cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover{
+            background-color: white;
+            transition: 10ms;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+        .img {
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
     </style>
 </head>
+
 <body>
+    <div class="img">
+        <img src="LandingAssets/White Logo.png" alt="">
+    </div>
+    <hr>
     <div class="container">
         <h1>Doctor Dashboard</h1>
+        <hr>
+        <h1>Actions</h1>
+        <hr>
         <a href="viewPatient.php" class="btn">View Your Patients</a>
-         <a href="viewDrugs.php"></a> 
+        <a href="viewDrugs.php"class="btn">View The Drugs Avaliable</a>
+        <hr>
         <form action="doctorDash.php" method="post">
             <button class="btn" type="submit">Log Out</button>
+        </form>
     </div>
 </body>
+
 </html>
