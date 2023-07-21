@@ -60,7 +60,7 @@ $conn->close();
 
 <head>
     <title>Pick Patient</title>
-    <link rel="stylesheet" href="selectDoctor.css">
+    <link rel="stylesheet" href="viewPatients.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">

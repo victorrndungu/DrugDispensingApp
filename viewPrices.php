@@ -45,6 +45,11 @@ $result = $stmt->get_result();
             background-color: #f2f2f2;
         }
     </style>
+    <link rel="stylesheet" href="viewPatients.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h1>View Prices</h1>
