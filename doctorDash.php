@@ -5,6 +5,6 @@ session_start();
 
 session_destroy();
 
-header("Location: doctorLogin.html");
+header("Location: homepage.html");
 exit;
 ?>

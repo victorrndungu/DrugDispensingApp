@@ -64,7 +64,7 @@ $result = $conn->query($sql);
                         <td><?php echo $row["LAST_NAME"]; ?></td>
                         <td><?php echo $row["EMAIL_ADDRESS"]; ?></td>
                         <td>
-                            <form method="post" action="viewDrugs.php">
+                            <form method="post" action="insertPrescription.php">
                                 <input type="hidden" name="PATIENT_ID" value="<?php echo $row["PATIENT_ID"]; ?>">
                                 <input type="submit" value="Make Prescription">
                             </form>
