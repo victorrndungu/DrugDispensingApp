@@ -43,4 +43,5 @@ $conn->close();
 
         <input type="submit" value="Update">
     <?php endif; ?>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </form>

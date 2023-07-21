@@ -52,7 +52,7 @@ $result = $conn->query($sql);
 <?php else : ?>
     <p>No data found.</p>
 <?php endif; ?>
-
+<p>&copy; 2023 EasyDawa. All rights reserved.</p>
 <?php
 $conn->close();
 ?>

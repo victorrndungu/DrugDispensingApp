@@ -75,5 +75,6 @@ $result = $conn->query($sql);
             <p>No patients found.</p>
         <?php endif; ?>
     </div>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
 </html>

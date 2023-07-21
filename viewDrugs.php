@@ -47,6 +47,7 @@ $result = $conn->query($sql);
         </table>
         <input type="submit" value="Select Drug">
     </form>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
 
 </html>

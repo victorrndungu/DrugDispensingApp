@@ -3,46 +3,60 @@
 
 <head>
     <title>Add Prescription</title>
+    <link rel="stylesheet" href="insertPatients.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <h1>Add Prescription</h1>
-    <form method="post" action="insertPrescription.php">
-        <div class="content">
-            <div class="labels">
-                <label for="prescription_id">Prescription ID:</label>
-                <label for="drug_id">Drug ID:</label>
-                <label for="drug_dosage">Drug Dosage:</label>
-                <label for="PATIENT_ID">Patient ID:</label>
-                <label for="DOCTORS_ID">Doctor ID:</label>
-            </div>
-            <div class="inputs">
-                <input type="number" name="prescription_id" required><br>
-
-                <select name="drug_id" required>
-                    <option value="">Select Drug</option>
-                    <?php
-                    require("EasyDawa.php");
-                    $sql = "SELECT drug_id, drug_name, drug_type, drug_form FROM drugs_info";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $optionValue = $row['drug_id'];
-                            $optionLabel = $row['drug_id'] . ' - ' . $row['drug_name'] . ' (' . $row['drug_type'] . ', ' . $row['drug_form'] . ')';
-                            echo "<option value='$optionValue'>$optionLabel</option>";
-                        }
-                    }
-                    ?>
-                </select><br>
-
-                <input type="text" name="drug_dosage" required><br>
-                <input type="number" name="PATIENT_ID" required><br>
-                <input type="number" name="DOCTORS_ID" required><br>
-            </div>
+    <div class="form">
+        <div class="home">
+            <a href="homepage.html"><img src="LandingAssets/Black Logo.png" alt=""></a>
         </div>
-        <input type="submit" value="Add Prescription">
-    </form>
+        <br>
+        <hr>
+        <h1>Add New Prescription</h1>
+        <hr>
+        <form method="post" action="insertPrescription.php">
+            <div class="content">
+                <div class="labels">
+                    <label for="prescription_id">Prescription ID:</label>
+                    <label for="drug_id">Drug ID:</label>
+                    <label for="drug_dosage">Drug Dosage:</label>
+                    <label for="PATIENT_ID">Patient ID:</label>
+                    <label for="DOCTORS_ID">Doctor ID:</label>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="prescription_id" required><br>
+    
+                    <select name="drug_id" required>
+                        <option value="">Select Drug</option>
+                        <?php
+                        require("EasyDawa.php");
+                        $sql = "SELECT drug_id, drug_name, drug_type, drug_form FROM drugs_info";
+                        $result = $conn->query($sql);
+    
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $optionValue = $row['drug_id'];
+                                $optionLabel = $row['drug_id'] . ' - ' . $row['drug_name'] . ' (' . $row['drug_type'] . ', ' . $row['drug_form'] . ')';
+                                echo "<option value='$optionValue'>$optionLabel</option>";
+                            }
+                        }
+                        ?>
+                    </select><br>
+    
+                    <input type="text" name="drug_dosage" required><br>
+                    <input type="number" name="PATIENT_ID" required><br>
+                    <input type="number" name="DOCTORS_ID" required><br>
+                </div>
+            </div>
+            <input type="submit" value="Add Prescription">
+        </form>
+    </div>
+    <p>&copy; 2023 EasyDawa. All rights reserved.</p>
 </body>
 
 </html>

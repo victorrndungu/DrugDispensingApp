@@ -1,0 +1,142 @@
+body {
+    background-color: rgb(255, 115, 255);
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+    background: linear-gradient(transparent, rgb(121, 121, 121)), url("LandingAssets/2ndback.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment:fixed  ;
+}
+
+.logo {
+    height: 100px;
+    width: 400px;
+}
+
+.welcome {
+    height: 100vh;
+}
+
+.home {
+    margin: auto;
+}
+
+p {
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.wcontent {
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 70%;
+    margin: auto;
+}
+
+.accounts {
+    display: flex;
+    flex-direction: row;
+}
+
+.login {
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 40%;
+    margin: auto;
+}
+
+.signup {
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 40%;
+    margin: auto;
+}
+
+form{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    height: 30px;
+    width: 20%;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.about{
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 60%;
+    margin: auto;
+}
+
+footer{
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 70%;
+    margin: auto;
+}
+
+.maria{
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 70%;
+    margin: auto;
+}
+.emily{
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 70%;
+    margin: auto;
+}
+.robert{
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    width: 70%;
+    margin: auto;
+}
+
+.text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+.testimo{
+    margin: auto;
+    width: 30%;
+    background-color: white;
+    border: 20px;
+    border: 2px solid black;
+}

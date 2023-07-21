@@ -39,3 +39,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 $conn->close();
 ?>
+<p>&copy; 2023 EasyDawa. All rights reserved.</p>

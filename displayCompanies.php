@@ -11,11 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Data</title>
 </head>
-
-<body>
-
-</body>
-
 </html>
 
 <?php
@@ -60,7 +55,7 @@ $result = $conn->query($sql);
 <?php else : ?>
     <p>No data found.</p>
 <?php endif; ?>
-
+<p>&copy; 2023 EasyDawa. All rights reserved.</p>
 <?php
 $conn->close();
 ?>
