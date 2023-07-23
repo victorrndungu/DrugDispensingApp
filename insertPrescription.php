@@ -69,7 +69,7 @@ $conn->close();
         <hr>
         <h1>Add Prescription</h1>
         <hr>
-        <form method="post" action="viewPatient.php">
+        <form method="post" action="insertPrescription.php">
             <div class="content">
                 <div class="labels">
                     <label for="prescription_id">Prescription ID:</label>
